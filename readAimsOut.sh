@@ -78,8 +78,8 @@ if '$parse_energy' == 'true':
 
 # Load data from the respective files if they exist
 if parse_hirshfeld:
-    hirshfeld_data = np.loadtxt('hirshfeld')
-    mols.arrays['hirshfeld'] = hirshfeld_data
+    hirshfeld_data = np.loadtxt('aims_hirshfeld')
+    mols.arrays['aims_hirshfeld'] = hirshfeld_data
 
 if parse_aims_charges:
     aims_charges_data = np.loadtxt('aims_charges')
@@ -87,11 +87,11 @@ if parse_aims_charges:
 
 if parse_forces:
     forces_data = np.loadtxt('forces')
-    mols.arrays['forces'] = forces_data
+    mols.arrays['aims_forces'] = forces_data
 
 if parse_energy:
     energy_data = np.loadtxt('energy')
-    mols.info['energy'] = energy_data
+    mols.info['aims_energy'] = energy_data
 
 # Write the updated molecule to a new xyz file
 write('loaded_file.xyz', mols)
