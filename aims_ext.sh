@@ -42,7 +42,7 @@ fi
 
 # Extract Hirshfeld charges from aims.out and append to the hirshfeld file if flag is set
 if [ "$parse_hirshfeld" = true ]; then
-    grep "Hirshfeld charge   " aims.out | awk '{print $5}' > hirshfeld
+    grep "Hirshfeld charge   " aims.out | awk '{print $5}' > aims_hirshfeld
 fi
 
 # Extract AIMs charges from aims.out and append to the aims_charges file if flag is set
@@ -96,4 +96,4 @@ if parse_energy:
 # Write the updated molecule to a new xyz file
 write('loaded_file.xyz', mols)
 "
-
+rm energy forces aims_hirshfeld aims_charges
